@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('https://getmdl.io/assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+  height: 170px;
+}
+.simText {
+	vertical-align: middle;
+	padding: 5px 0px;
+}
+.demo-card-square.mdl-card {
+  width: 95%;
+  height: 95%;
+  margin: auto;
+}
+.mdl-textfield__label::after {
+	bottom: 5px;
+}
+.mdl-textfield__label {
+	top: 10px;
+}
+.mdl-textfield {
+	width: 130px;
+}
+.mdl-textfield__input, .mdl-textfield__label {
+	text-align: center;
+}
+
+.demo-card-image.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: url('https://getmdl.io/assets/demos/dog.png') center / cover;
+  margin: 20px auto;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mdl-progress {
+	width: auto;
+}
+
+
+.mdl-layout__container {
+	/*height: 150px;*/
+}
+
+.demo-layout-transparent {
+  background: url('https://getmdl.io/assets/demos/transparent.jpg') center / cover;
+}
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+.sim-card {
+  margin: auto;
+  width: 97%;
+  margin-bottom: 20px;
+}
+ 
+.mdl-mini-footer {
+  padding: 15px 16px;
+}
+ 
+.mdl-button.mdl-button--colored.titleSpan {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+	font-size: 20px;
+	line-height: 1;
+	letter-spacing: .02em;
+	font-weight: 400;
+	color: rgb(255,255,255);
+	padding-top: 13px;
+}
+
+.mdl-card__title {
+	display: block;
+}
+
+@media screen and (max-width: 1024px)  {
+	.mdl-layout__header {
+		display: flex;
+	}
+}

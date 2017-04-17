@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 3</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="main.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="sheduler.js"></script>
+</head>
+<body>
+
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Lab 3</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <form name="lab3" action="#" id="formID">
+    
+        <span class="simText">
+            Поверхность блестящая металическая
+        </span>
+        <br>
+        
+        <span class="simText">
+            I<sub>l</sub> =
+        </span> 
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="il_md" value="10" name="il">
+            <label class="mdl-textfield__label" for="il_md">Recommend: 10</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            I<sub>a</sub> =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="ia_md" value="1" name="ia">
+            <label class="mdl-textfield__label" for="ia_md">Recommend: 1</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            L =
+        </span> 
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="li_md" value="-2" name="li">
+            <label class="mdl-textfield__label" for="li_md">Recommend: -2</label>
+        </div>
+        <span class="simText">
+            i + 
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="lj_md" value="-2" name="lj">
+            <label class="mdl-textfield__label" for="lj_md">Recommend: -2</label>
+        </div>
+        <span class="simText">
+            j +
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="lk_md" value="2" name="lk">
+            <label class="mdl-textfield__label" for="lk_md">Recommend: 2</label>
+        </div>
+        <span class="simText">
+            k
+        </span>
+        <br>
+        
+        <span class="simText">
+            S =
+        </span> 
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="si_md" value="2" name="si">
+            <label class="mdl-textfield__label" for="si_md">Recommend: 2</label>
+        </div>
+        <span class="simText">
+            i + 
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="sj_md" value="1" name="sj">
+            <label class="mdl-textfield__label" for="sj_md">Recommend: 1</label>
+        </div>
+        <span class="simText">
+            j +
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="sk_md" value="2" name="sk">
+            <label class="mdl-textfield__label" for="sk_md">Recommend: 2</label>
+        </div>
+        <span class="simText">
+            k
+        </span>
+        <br>
+        
+        <span class="simText">
+            d =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="d_md" value="0" name="d">
+            <label class="mdl-textfield__label" for="d_md">Recommend: 0</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            K =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="k_md" value="1" name="k">
+            <label class="mdl-textfield__label" for="k_md">Recommend: 1</label>
+        </div>
+        <br>
+
+        <span class="simText">
+            k<sub>s</sub> =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="ks_md" value="0.8" name="ks">
+            <label class="mdl-textfield__label" for="ks_md">Recommend: 0.8</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            k<sub>a</sub> =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="ka_md" value="0.15" name="ka">
+            <label class="mdl-textfield__label" for="ka_md">Recommend: 0.15</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            k<sub>d</sub> =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="kd_md" value="0.15" name="kd">
+            <label class="mdl-textfield__label" for="kd_md">Recommend: 0.15</label>
+        </div>
+        <br>
+        
+        <span class="simText">
+            n =
+        </span>
+        <div class="mdl-textfield mdl-js-textfield simText">
+            <input class="mdl-textfield__input" type="text" id="n_md" value="5" name="n">
+            <label class="mdl-textfield__label" for="n_md">Recommend: 5</label>
+        </div>
+        <br>
+
+    </form>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" form="formID">
+        Рисовать
+    </button>
+  </div>
+  <div id="progress" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+</div>
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="margin: 20px auto;">
+  <!-- <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Material</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+    </tr>
+  </thead>-->
+  <tbody>
+    <tr>
+      <td>
+        <div class="demo-card-image mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title mdl-card--expand"></div>
+		  <div class="mdl-card__actions">
+		    <span class="demo-card-image__filename" id="s1">Image.jpg</span>
+		  </div>
+		</div>
+      </td>
+      <td>
+        <div class="demo-card-image mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename" id="s2">Image.jpg</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="demo-card-image mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename" id="s3">Image.jpg</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="demo-card-image mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename"  id="s4">Image.jpg</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
