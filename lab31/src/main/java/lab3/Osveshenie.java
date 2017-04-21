@@ -27,7 +27,7 @@ public class Osveshenie {
 	private final int width = 300;
 	private final int height = 300;
 	
-	private final String PATH = "D:\\apache-tomcat-8.0.36\\webapps\\files";
+	private final String PATH = "C:\\Tomcat\\webapps\\files";
 
 	private double cos_alp(Pojo p) {
 		float R[] = { -p.getLi(), -p.getLj(), p.getLk() };
@@ -64,19 +64,39 @@ public class Osveshenie {
 			switch (k) {
 			case 0:
 				for (int i = 0; i < width / 2; i++) {
-					for (int j = 299; j > width - i; j--) {
+					for (int j = height; j > height - i; j--) {
 						pWriter.setColor(i, j, color);
 					}
 				}
 				for (int i = width / 2; i < width; i++) {
-					for (int j = 299; j > width - i; j--) {
+					for (int j = height; j > height - i; j--) {
 						pWriter.setColor(i, j, color);
 					}
 				}
 				break;
 			case 1:
+				for (int j = 0; j < height / 2; j++) {
+					for (int i = width / 2 + j; i < width; i++) {
+						pWriter.setColor(i, j, color);
+					}
+				}
+				for (int j = height / 2; j < height; j++) {
+					for (int i = width / 2 + j - height / 2; i < width; i++) {
+						pWriter.setColor(i, j, color);
+					}
+				}
 				break;
 			case 2:
+				for (int i = 0; i < width / 2; i++) {
+					for (int j = 0; j < i; j++) {
+						pWriter.setColor(i, j, color);
+					}
+				}
+				for (int i = width / 2; i < width; i++) {
+					for (int j = height; j > height - i; j--) {
+						pWriter.setColor(i, j, color);
+					}
+				}
 				break;
 			case 3:
 				break;
