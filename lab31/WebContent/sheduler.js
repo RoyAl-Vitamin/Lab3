@@ -68,18 +68,23 @@ f = function(event) {
 		dataType : "json",
 		data : JSON.stringify(dataPost),
 		beforeSend : function() {
-			alert('Fetching.... ' + "/get");
+//			alert('Fetching.... ' + "/get");
 		},
-		success : function() {
-			alert('Fetch Complete');
+		success : function(data) {
+//			alert('Fetch Complete, data == ' + data);
+			var str = JSON.parse(JSON.stringify(data));
+			var adr = decodeURIComponent(str.pic);
+		 	$("#pic1").css('background', 'url(\'' + adr + '\') center / cover');
+		 	$("#picD1").html("Простая закраска");
 		},
 		error : function() {
-			alert('Error');
+//			alert('Error');
+			$("#pic1, #pic2, #pic3, #pic4").css('background', 'url(\'https://getmdl.io/assets/demos/dog.png\') center / cover;');
 		},
-		complete : function() {
-			alert('Complete')
-		},
-		timeout: 5000
+		complete : function(data) {
+//			alert('Complete');
+		}//,
+		//timeout: 5000
 	});
 
 	$("#progress").hide();

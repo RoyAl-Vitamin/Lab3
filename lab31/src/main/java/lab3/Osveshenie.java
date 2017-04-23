@@ -3,6 +3,8 @@ package lab3;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 
 import javax.imageio.ImageIO;
@@ -12,6 +14,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
@@ -27,7 +32,7 @@ public class Osveshenie {
 	private final int width = 300;
 	private final int height = 300;
 	
-	private final String PATH = "C:\\Tomcat\\webapps\\files";
+	private final String PATH = "D:\\apache-tomcat-9.0.0.M20\\webapps\\files";
 
 	private double cos_alp(Pojo p) {
 		float R[] = { -p.getLi(), -p.getLj(), p.getLk() };
@@ -64,41 +69,55 @@ public class Osveshenie {
 			switch (k) {
 			case 0:
 				for (int i = 0; i < width / 2; i++) {
-					for (int j = height; j > height - i; j--) {
+					for (int j = height - 1; j > height - i; j--) {
 						pWriter.setColor(i, j, color);
 					}
 				}
 				for (int i = width / 2; i < width; i++) {
-					for (int j = height; j > height - i; j--) {
+					for (int j = height - 1; j > i; j--) {
 						pWriter.setColor(i, j, color);
 					}
 				}
+				saveWritableImage(writableImage, new File(PATH, "temp0.png"));
 				break;
 			case 1:
 				for (int j = 0; j < height / 2; j++) {
-					for (int i = width / 2 + j; i < width; i++) {
+					for (int i = width - j; i < width; i++) {
 						pWriter.setColor(i, j, color);
 					}
 				}
 				for (int j = height / 2; j < height; j++) {
-					for (int i = width / 2 + j - height / 2; i < width; i++) {
+					for (int i = width / 2 + j - height / 2 - 1; i < width; i++) {
 						pWriter.setColor(i, j, color);
 					}
 				}
+				saveWritableImage(writableImage, new File(PATH, "temp1.png"));
 				break;
 			case 2:
 				for (int i = 0; i < width / 2; i++) {
-					for (int j = 0; j < i; j++) {
+					for (int j = 0; j < i + 1; j++) {
 						pWriter.setColor(i, j, color);
 					}
 				}
 				for (int i = width / 2; i < width; i++) {
-					for (int j = height; j > height - i; j--) {
+					for (int j = 0; j < -i + height + 1; j++) {
 						pWriter.setColor(i, j, color);
 					}
 				}
+				saveWritableImage(writableImage, new File(PATH, "temp2.png"));
 				break;
 			case 3:
+				for (int j = 0; j < height / 2; j++) {
+					for (int i = 0; i < j + 1; i++) {
+						pWriter.setColor(i, j, color);
+					}
+				}
+				for (int j = height / 2; j < height; j++) {
+					for (int i = 0; i < -j + width + 1; i++) {
+						pWriter.setColor(i, j, color);
+					}
+				}
+				saveWritableImage(writableImage, new File(PATH, "temp3.png"));
 				break;
 			}
 		}
@@ -107,7 +126,16 @@ public class Osveshenie {
 		File file = new File(PATH, name + ".png");
 //		System.out.println("GET ABS PATH == " + file.getAbsolutePath());
 		saveWritableImage(writableImage, file);
-		return Response.ok().entity(("{\"pic\": \"" + PATH + name + ".png" + "\"}").getBytes(Charset.forName("UTF-8"))).build();
+		JSONObject jsonObj = new JSONObject();
+		try {
+			jsonObj.put("pic", URLEncoder.encode("/files/"+ name + ".png", "UTF-8"));
+		} catch (JSONException e1) {
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		}
+		
+		return Response.ok().entity(jsonObj.toString().getBytes(Charset.forName("UTF-8"))).build();
 	}
 
 	// Полная

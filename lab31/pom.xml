@@ -50,8 +50,12 @@
 	    <artifactId>jersey-media-moxy</artifactId>
 	    <version>2.26-b03</version>
 		</dependency>
-    
-    
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20160810</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>lab3</finalName>
