@@ -140,6 +140,17 @@ public class Osveshenie {
 
 	// Полная
 	// метод Гуро
+	@POST
+	@Path("get2")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes("application/json")
+	// Простейшая
+	// Делает картинку и отправляет Джисоном её адрес
+	public Response getOsv2(Pojo p) {
+		JSONObject jsonObj = new JSONObject();
+		jsonObj.put("err", "Unimplemented method");
+		return Response.ok().entity(jsonObj.toString().getBytes(Charset.forName("UTF-8"))).build();	
+	}
 	// метод Фонга
 
 	/**
