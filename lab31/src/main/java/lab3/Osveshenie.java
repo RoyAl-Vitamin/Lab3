@@ -9,11 +9,13 @@ import java.nio.charset.Charset;
 
 import javax.imageio.ImageIO;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -167,4 +169,18 @@ public class Osveshenie {
 			e.printStackTrace();
 		}
 	}
+	
+    @GET
+    @Path("get3")
+    @Produces("image/png")
+    // Отправка картинки сразу при вставке тега <img src="/lab3/webapi/get/get3"/>
+    public Response getPic() {
+
+        File file = new File("C:\\Users\\rav\\Pictures\\1.png");
+
+        ResponseBuilder response = Response.ok((Object) file);
+        response.header("Content-Disposition",
+            "attachment; filename=image_from_server.png");
+        return response.build();
+    }
 }
